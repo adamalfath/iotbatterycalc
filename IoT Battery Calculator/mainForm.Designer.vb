@@ -337,7 +337,7 @@ Partial Class mainForm
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(6, 154)
+        Me.Label22.Location = New System.Drawing.Point(6, 128)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(102, 13)
         Me.Label22.TabIndex = 35
@@ -453,7 +453,7 @@ Partial Class mainForm
         '
         'txtRunTime
         '
-        Me.txtRunTime.Location = New System.Drawing.Point(132, 151)
+        Me.txtRunTime.Location = New System.Drawing.Point(132, 125)
         Me.txtRunTime.Name = "txtRunTime"
         Me.txtRunTime.ReadOnly = True
         Me.txtRunTime.Size = New System.Drawing.Size(99, 20)
@@ -541,7 +541,7 @@ Partial Class mainForm
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(6, 128)
+        Me.Label24.Location = New System.Drawing.Point(6, 154)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(82, 13)
         Me.Label24.TabIndex = 53
@@ -552,7 +552,7 @@ Partial Class mainForm
         '
         'txtEnergyBal
         '
-        Me.txtEnergyBal.Location = New System.Drawing.Point(132, 125)
+        Me.txtEnergyBal.Location = New System.Drawing.Point(132, 151)
         Me.txtEnergyBal.Name = "txtEnergyBal"
         Me.txtEnergyBal.ReadOnly = True
         Me.txtEnergyBal.Size = New System.Drawing.Size(65, 20)
@@ -562,7 +562,7 @@ Partial Class mainForm
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(207, 128)
+        Me.Label25.Location = New System.Drawing.Point(207, 154)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(28, 13)
         Me.Label25.TabIndex = 54
