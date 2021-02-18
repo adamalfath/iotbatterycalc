@@ -42,15 +42,15 @@ Public Class mainForm
     End Sub
 
     Private Sub Calculate()
-        Dim acticeDurationPerHour, sleepDurationPerHour, powerConsumptionPerHour, powerConsumptionPerDay As Double
+        Dim activeDurationPerHour, sleepDurationPerHour, powerConsumptionPerHour, powerConsumptionPerDay As Double
         Dim powerAvail, PVGen, energyBal, runTimeHour As Double
         Dim rt As Long
         Dim runTimeText As String = ""
 
         ' Calculate result
-        acticeDurationPerHour = activeDuration / (activeDuration + sleepDuration) * 3600
+        activeDurationPerHour = activeDuration / (activeDuration + sleepDuration) * 3600
         sleepDurationPerHour = sleepDuration / (activeDuration + sleepDuration) * 3600
-        powerConsumptionPerHour = (acticeDurationPerHour / 3600 * activeCurrent) + (sleepDurationPerHour / 3600 * sleepCurrent)
+        powerConsumptionPerHour = (activeDurationPerHour / 3600 * activeCurrent) + (sleepDurationPerHour / 3600 * sleepCurrent)
         powerConsumptionPerDay = powerConsumptionPerHour * 24
         powerAvail = batteryCapacity * (100 - batteryLimit) / 100
         PVGen = PVCurrent * PVSunTime
