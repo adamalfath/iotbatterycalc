@@ -1,6 +1,6 @@
 # IoT Battery Calculator
 ## Introduction 
-<img src="https://github.com/adamalfath/iotbatterycalc-gui/blob/master/media/iotbatterycalc-gui.png" width="600">  
+<img src="https://github.com/adamalfath/iotbatterycalc/blob/master/media/iotbatterycalc-gui.png">  
 
 Kalkulator sederhana untuk menghitung estimasi waktu aktif dari perangkat IoT (atau perangkat apapun secara general) yang dihidupkan menggunakan baterai. Disertai opsi untuk parameter recharging.
 
@@ -33,31 +33,31 @@ https://github.com/adamalfath/iotbatterycalc/releases/latest
 Dalam screenshot diatas diperlihatkan sebuah perangkat aktif per 30 menit sekali (1800s) dengan komposisi waktu aktif selama 10s @20mA dan sleep selama 1790s @20uA. Baterai yang digunakan berkapasitas 1000mAh tanpa rangkaian recharge dengan batas discharge 20%. Terhitung lama waktu perangkat dapat aktif yaitu ~254 hari 10 jam 52 menit 13 detik.
 
 ## Theory
-Pertama hitung durasi perangkat aktif ![t_APH](https://latex.codecogs.com/svg.latex?%5Cinline%20t_%7BAPH%7D) dan sleep ![t_SPH](https://latex.codecogs.com/svg.latex?%5Cinline%20t_%7BSPH%7D) dalam satu siklus per unit jam:  
+Pertama hitung durasi perangkat aktif ![t_APH0](https://github.com/adamalfath/iotbatterycalc/blob/master/media/t_APH0.svg) dan sleep ![t_SPH0](https://github.com/adamalfath/iotbatterycalc/blob/master/media/t_SPH0.svg) dalam satu siklus per unit jam:  
 
-![t_APH](https://latex.codecogs.com/svg.latex?%5Cinline%20t_%7BAPH%7D%3D%5Cfrac%7Bt_%7Bactive%7D%7D%7Bt_%7Bactive%7D&plus;t_%7Bsleep%7D%7D*3600)  
+![t_APH](https://github.com/adamalfath/iotbatterycalc/blob/master/media/t_APH.svg)  
 
-![t_SPH](https://latex.codecogs.com/svg.latex?%5Cinline%20t_%7BSPH%7D%3D%5Cfrac%7Bt_%7Bsleep%7D%7D%7Bt_%7Bactive%7D&plus;t_%7Bsleep%7D%7D*3600) 
+![t_SPH](https://github.com/adamalfath/iotbatterycalc/blob/master/media/t_SPH.svg) 
 
-Untuk menghitung konsumsi daya perangkat, jumlahkan konsumsi daya pada masing-masing mode (aktif dan sleep). Konsumsi daya ![Q_CPH](https://latex.codecogs.com/svg.latex?%5Cinline%20Q_%7BCPH%7D) dihitung dengan mengkalikan arus dengan durasi per unit jam:  
+Untuk menghitung konsumsi daya perangkat, jumlahkan konsumsi daya pada masing-masing mode (aktif dan sleep). Konsumsi daya ![Q_CPH0](https://github.com/adamalfath/iotbatterycalc/blob/master/media/Q_CPH0.svg) dihitung dengan mengkalikan arus dengan durasi per unit jam:  
 
-![Q_CPH](https://latex.codecogs.com/svg.latex?%5Cinline%20Q_%7BCPH%7D%3D%28%5Cfrac%7Bt_%7BAPH%7D%7D%7B3600%7D*I_%7Bactive%7D%29&plus;%28%5Cfrac%7Bt_%7BSPH%7D%7D%7B3600%7D*I_%7Bsleep%7D%29)  
+![Q_CPH](https://github.com/adamalfath/iotbatterycalc/blob/master/media/Q_CPH.svg)  
 
 atau per unit hari:  
 
-![Q_CPD](https://latex.codecogs.com/svg.latex?%5Cinline%20Q_%7BCPD%7D%3DQ_%7BCPH%7D*24)
+![Q_CPD](https://github.com/adamalfath/iotbatterycalc/blob/master/media/Q_CPD.svg)
 
-Kalkulasi lamanya waktu perangkat dapat berjalan ![t_run](https://latex.codecogs.com/svg.latex?%5Cinline%20t_%7Brun%7D) dengan kapasitas baterai yang tersedia ![Q_BAT](https://latex.codecogs.com/svg.latex?%5Cinline%20Q_%7BBAT%7D) dapat dihitung menggunakan persamaan berikut:  
+Kalkulasi lamanya waktu perangkat dapat berjalan ![t_run0](https://github.com/adamalfath/iotbatterycalc/blob/master/media/t_run0.svg) dengan kapasitas baterai yang tersedia ![Q_BAT0](https://github.com/adamalfath/iotbatterycalc/blob/master/media/Q_BAT0.svg) dapat dihitung menggunakan persamaan berikut:  
 
-![Q_BAT](https://latex.codecogs.com/svg.latex?%5Cinline%20Q_%7BBAT%7D%3DQ_%7BBAT0%7D*%5Cfrac%7B100-%28Discharge%5C%3ALimit%29%7D%7B100%7D)  
+![Q_BAT](https://github.com/adamalfath/iotbatterycalc/blob/master/media/Q_BAT.svg)  
 
-![t_run](https://latex.codecogs.com/svg.latex?%5Cinline%20t_%7Brun%7D%3D%5Cfrac%7BQ_%7BBAT%7D%7D%7BQ_%7BCPH%7D%7D)
+![t_run](https://github.com/adamalfath/iotbatterycalc/blob/master/media/t_run.svg)
 
 Kalkulasi terkait recharging dan selisih daya per hari dapat dihitung menggunakan persamaan berikut:
 
-![Q_PV](https://latex.codecogs.com/svg.latex?%5Cinline%20Q_%7BPV%7D%3DI_%7BPV%7D*t_%7Bsun%7D)  
+![Q_PV](https://github.com/adamalfath/iotbatterycalc/blob/master/media/Q_PV.svg)  
 
-![deltaQ](https://latex.codecogs.com/svg.latex?%5Cinline%20%5CDelta%20Q%3DQ_%7BPV%7D-Q_%7BCPD%7D)  
+![deltaQ](https://github.com/adamalfath/iotbatterycalc/blob/master/media/deltaQ.svg)  
 
 ## Support Open-Source Hardware & SENTSOR!
 Bila kalian tertarik dengan produk-produk SENTSOR, kalian bisa cek marketplace ataupun memberikan donasi pada link berikut:  
